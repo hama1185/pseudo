@@ -3,10 +3,10 @@ float objX,objY;
 float disX, disY;
 float delay = 1.00;
 
-int rangeMin = 350;
-int rangeMax = 450;
+int rangeMin = 325;
+int rangeMax = 475;
 
-boolean delayFlag = false;
+boolean delayFlag = true;
 
 // image setting
 PImage backimage;
@@ -14,7 +14,7 @@ PImage backimage;
 
 
 void setup(){
-  backimage = loadImage("image/width100.png");
+  backimage = loadImage("image/width150.png");
   size(800, 600);
   noCursor();
   objX = mouseX;
@@ -40,5 +40,7 @@ void draw(){
   objY = objY + disY/delay;
   
   background(backimage);
-  ellipse(objX,objY,25,25);  
+  if(!delayFlag){
+    ellipse(objX,objY,25,25);
+  }
 }
